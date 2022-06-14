@@ -1,4 +1,5 @@
-from django.views.generic import ListView, DetailView
+from django.views.generic import (ListView, DetailView, 
+            CreateView, UpdateView, DeleteView)
 
 from .models import Cheese
 
@@ -7,4 +8,14 @@ class CheeseListView(ListView):
     model = Cheese
 
 class CheeseDetailView(DetailView):
+    model = Cheese
+
+class CheeseCreateView(CreateView):
+    model = Cheese
+    fields = ('name', 'description', 'firmness', 'country_of_origin')
+
+class CheeseUpdateView(UpdateView):
+    model = Cheese
+
+class CheeseDeleteView(DeleteView):
     model = Cheese
