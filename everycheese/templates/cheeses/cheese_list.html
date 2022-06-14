@@ -5,7 +5,7 @@
 {% block content %}
 <ul>
     {% for cheese in cheese_list %}
-        <li><a href="#TODO">{{ cheese.name }}<a></li>
+        <li><a href="{% url 'cheeses:detail' cheese.slug %}">{{ cheese.name }}<a></li>
     {% endfor %}
 </ul>
 {% endblock content %}
